@@ -1,0 +1,28 @@
+@import '../config';
+
+form.login {
+    section.inputs {
+        div.input-div.username {
+            margin-bottom: 1em;
+        }
+    }
+
+    section.links {
+        @include Flex(sb, c);
+        margin-top: .5em;
+        margin-bottom: 3em;
+
+        p,
+        label {
+            cursor: pointer;
+            @include Clamp(.8, 3, .9);
+        }
+
+        p {
+            transition: .3s;
+            &:hover { color: $clr-grey; }
+        }
+
+        label { margin-right: .25em; cursor: pointer; }
+    }
+}

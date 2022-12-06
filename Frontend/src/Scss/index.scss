@@ -1,0 +1,62 @@
+/*
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Slab', serif;
+*/
+
+@import './config';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+div.App,
+div#root {
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background: #303030;
+    color: $clr-white;
+    font-family: 'Open Sans', sans-serif;
+    @include Flex(c, c);
+
+    svg { pointer-events: none; @include FullSize; }
+
+    main.content {
+        width: 99vw;
+        height: 98vh;
+        border-radius: .25em;
+        display: flex;
+        overflow: hidden;
+
+        div.rightside-wrap {
+            @include FullSize;
+            @include Flex(none, none, c);
+            position: relative;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 3px;
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        width: 100%;
+        background: #808080;
+        border-radius: .25em;
+    }
+
+    @media (max-width: 768px) {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+

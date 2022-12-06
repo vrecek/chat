@@ -1,0 +1,39 @@
+{
+  "name": "react-chat",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd Frontend && npm start",
+    "tsc": "tsc",
+    "server": "cd Javascript && nodemon server.js",
+    "dev": "concurrently \"npm run tsc\" \"npm run server\" \"npm run client\""
+  },
+  "author": "vrecek",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "connect-mongo": "^4.6.0",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.3",
+    "email-validator": "^2.0.4",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.7.5",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.6.7",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/express": "^4.17.14",
+    "@types/express-session": "^1.17.5",
+    "@types/multer": "^1.4.7",
+    "@types/passport": "^1.0.11",
+    "@types/passport-local": "^1.0.34"
+  }
+}

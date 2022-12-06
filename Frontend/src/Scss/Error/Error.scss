@@ -1,0 +1,44 @@
+@import '../config';
+
+main.error {
+    width: 50vw;
+    min-width: 480px;
+    @include Flex(c, c, c);
+
+    button {
+        width: 50%;
+        min-width: max-content;
+        cursor: pointer;
+        outline: 0;
+        border: 0;
+        background: $clr-blued;
+        border-radius: .5em;
+        padding: 1em;
+        transition: .3s;
+
+        label {
+            color: $clr-white;
+            font-weight: 500;
+        }
+
+        &:hover { background: royalblue; }
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        color: $clr-grey;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 8rem;
+        margin: .25em 0;
+    }
+
+    @media (max-width: 480px) {
+        @include ResetWidth;
+        width: 100vw;
+    }
+}

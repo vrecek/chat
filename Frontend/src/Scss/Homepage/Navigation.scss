@@ -1,0 +1,47 @@
+@import '../config';
+
+nav.navigation {
+    width: 100%;
+    height: 9%;
+    background: rgb(36, 39, 61);
+    @include Flex(sb, c);
+    padding: .75em 1.25em;
+
+    section.chat-user {
+        @include Flex(none, c);
+        height: 100%;
+
+        figure {
+            height: 100%;
+            aspect-ratio: 1;
+            border-radius: .5em;
+            overflow: hidden;
+            margin-right: .75em;
+
+            img {
+                @include FullSize;
+                object-fit: cover;
+            }
+        }
+
+        p {
+            font-weight: 700;
+            font-family: 'Roboto Slab', serif;
+            @include Clamp(1, 2, 1.5);
+            letter-spacing: .5px;
+        }
+    }
+
+    section.options-user {
+        @include Flex(none, c);
+        
+        span {
+            margin-left: .5em;
+            @include Rectangle(clamp(35px, 2vw, 80px));
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover { color: $clr-bluel; }
+        }
+    }
+}

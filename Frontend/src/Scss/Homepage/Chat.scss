@@ -1,0 +1,120 @@
+@import '../config';
+
+article.chat {
+    height: 91%;
+    background: rgb(51, 55, 83);
+    @include Flex(sb, none, c);
+
+    article.messages {
+        height: 90%;
+        overflow-y: scroll;
+        padding: 1.5em;
+
+        div {
+            width: max-content;
+            max-width: 40%;
+
+            p {
+                &.msg {
+                    padding: .5em .75em;
+                    position: relative;
+                    border-radius: .25em .25em .25em .25em;
+                    margin-bottom: .5em;
+                    @include Clamp(1, 1.25, 1.2);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        @include Rectangle(10px);
+                        rotate: 45deg;
+                    }
+                }
+
+                &.date {
+                    font-size: .8rem;
+                    color: $clr-grey;
+                }
+            }
+
+            &.sender {
+                p {
+                    &.msg {
+                        background: $clr-blued;
+
+                        &::before {
+                            left: 0;
+                            translate: 50% 50%;
+                            background: $clr-blued;
+                        }
+                    }
+                }                
+            }
+
+            &.recipient {
+                margin: 0 0 0 auto;
+
+                p {
+                    &.msg {
+                        background: rgb(5, 105, 5);
+
+                        &::before {
+                            right: 0;
+                            translate: -50% 50%;
+                            background: rgb(5, 105, 5);
+                        }
+                    }
+
+                    &.date {
+                        text-align: right;
+                    }
+                }
+            }
+
+            @include NotMargin(2);
+        }
+
+        @media (max-width: 480px) {
+            padding: .5em;
+
+            div { p { &.msg {
+                font-size: .9rem;
+            } } }
+        }
+    }
+
+    section.write-message {
+        height: 8%;
+
+        div.input {
+            height: 100%;
+            @include Flex(sb);
+            position: relative;
+
+            input {
+                outline: 0;
+                border: 1px solid rgb(35, 35, 97);
+                border-right: 0;
+                border-radius: .25em 0 0 .25em;
+                background: rgb(24, 24, 46);
+                color: $clr-white;
+                padding: .25em clamp(.25em, 3vw, 1em);
+                width: 95%;
+                @include Clamp(.9, 2.5, 1.25);
+            }
+
+            span {
+                cursor: pointer;
+                // height: 100%;  
+                aspect-ratio: 1; 
+                border: 1px solid rgb(35, 35, 97);
+                border-left: 0;
+                @include Flex(c, c);
+                background: rgb(24, 24, 46);
+                border-radius: 0 .25em .25em 0;
+                   
+                svg { @include FullSize(50%) }
+            }
+        }
+    }
+}

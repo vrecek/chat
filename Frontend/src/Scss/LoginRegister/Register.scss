@@ -1,0 +1,7 @@
+@import '../config';
+
+form.register {
+    div.input-div {
+        @include NotMargin(1);
+    }
+}
